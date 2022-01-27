@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let fonts = Bundle.main.urls(forResourcesWithExtension: "otf", subdirectory: nil)
+        fonts?.forEach({ url in
+            CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
+        })
+        CDQuoteManager.shared.deleteCoreData()
+        FirebaseApp.configure()
+        NotificationsManager.shared.configure()
+        IAPManager.shared.configure { success in
+            if success {
+                print("Did set up qonversion")
+            }
+        }
+//        Session.shared.logOut()
+//        UserDefaults.standard.removeObject(forKey: C_LASTUPDATED)
         return true
     }
 

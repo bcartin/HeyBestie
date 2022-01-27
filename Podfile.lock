@@ -1,0 +1,16 @@
+PODS:
+  - GTDevTools (0.1.13)
+
+DEPENDENCIES:
+  - GTDevTools (~> 0.1.13)
+
+SPEC REPOS:
+  https://github.com/bcartin/GTPodSpecs.git:
+    - GTDevTools
+
+SPEC CHECKSUMS:
+  GTDevTools: f5a4d7b364bbf4d953d3045cdc716d23540695d7
+
+PODFILE CHECKSUM: aeef9f2cc90b2b4516adf8e813132d08ce53c788
+
+COCOAPODS: 1.10.1
